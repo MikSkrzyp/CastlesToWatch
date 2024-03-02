@@ -1,4 +1,6 @@
-using CastlesToWatch.API.Model;
+using CastlesToWatch.API.Data;
+using CastlesToWatch.API.Mappings;
+using CastlesToWatch.API.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +16,11 @@ builder.Services.AddDbContext<CastlesDbContext>((options) =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("CastlesDb"));
 });
+
+builder.Services.AddScoped<ICountryRepository, SQLCountryRepository>();
+
+
+builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 
 var app = builder.Build();
 
