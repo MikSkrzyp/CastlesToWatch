@@ -9,5 +9,9 @@ namespace CastlesToWatch.API.Repositories
              string? sortBy, bool isAscending);
 
         Task<Castle> CreateAsync(Castle castle);
+        Task<Castle?> GetByIdAsync(Guid id);
+        Task<Castle?> UpdateAsync(Guid id, Castle castle);
+        Task<Castle?> DeleteAsync(Guid id);
+
     }
 }

@@ -40,5 +40,43 @@ namespace CastlesToWatch.API.Controllers
             return Ok(mapper.Map<CastleDTO>(castleDomain));
         }
 
+        [HttpGet]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> GetById([FromRoute] Guid id)
+        {
+            var castleDomain = await castleRepository.GetByIdAsync(id);
+            if(castleDomain == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(mapper.Map<CastleDTO>(castleDomain));
+        }
+
+        [HttpPut]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> Update([FromRoute] Guid id, UpdateCastleDTO updateCastleDTO)
+        {
+            var castleDomain = mapper.Map<Castle>(updateCastleDTO);
+
+            castleDomain = await castleRepository.UpdateAsync(id, castleDomain);
+            if(castleDomain == null)
+            {
+                return NotFound();
+            }
+            return Ok(mapper.Map<CastleDTO>(castleDomain));
+        }
+
+        [HttpDelete]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> Delete([FromRoute] Guid id) { 
+            var castleDomain = await castleRepository.DeleteAsync(id);
+            if(castleDomain == null)
+            {
+                return NotFound();
+            }
+            return Ok(mapper.Map<CastleDTO>(castleDomain));
+        }
+
     }
 }
