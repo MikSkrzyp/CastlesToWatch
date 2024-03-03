@@ -10,6 +10,9 @@ namespace CastlesToWatch.API.Mappings
         {
             CreateMap<Country,CountryDTO>().ReverseMap();
             CreateMap<CreateCountryDto, Country>().ReverseMap();
+            CreateMap<Castle,CastleDTO>().ReverseMap();
+            CreateMap<CreateCastleDto, Castle>().ReverseMap();
+
 
 
 

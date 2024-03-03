@@ -18,6 +18,7 @@ builder.Services.AddDbContext<CastlesDbContext>((options) =>
 });
 
 builder.Services.AddScoped<ICountryRepository, SQLCountryRepository>();
+builder.Services.AddScoped<ICastleRepository, SQLCastleRepository>();
 
 
 builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
