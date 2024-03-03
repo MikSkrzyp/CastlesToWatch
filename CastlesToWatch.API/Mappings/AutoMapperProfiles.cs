@@ -9,6 +9,7 @@ namespace CastlesToWatch.API.Mappings
         public AutoMapperProfiles()
         {
             CreateMap<Country,CountryDTO>().ReverseMap();
+            CreateMap<CreateCountryDto, Country>().ReverseMap();
 
 
 

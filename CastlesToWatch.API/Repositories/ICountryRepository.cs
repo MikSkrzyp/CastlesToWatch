@@ -6,5 +6,7 @@ namespace CastlesToWatch.API.Repositories
     {
 
        Task<List<Country>> GetAllAsync();
+        Task<Country> CreateAsync(Country country);
+        Task<Country?> GetByIdAsync(Guid id);
     }
 }

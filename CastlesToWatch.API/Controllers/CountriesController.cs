@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CastlesToWatch.API.Data;
 using CastlesToWatch.API.Model.Domain;
+using CastlesToWatch.API.Model.DTO;
 using CastlesToWatch.API.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -27,6 +28,26 @@ namespace CastlesToWatch.API.Controllers
         {
             var countriesDomain = await countryRepository.GetAllAsync();
             return Ok(mapper.Map<List<Country>>(countriesDomain));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] CreateCountryDto createCountryDto)
+        {
+            var countryDomain = mapper.Map<Country>(createCountryDto);
+             await countryRepository.CreateAsync(countryDomain);
+            return Ok(mapper.Map<CountryDTO>(countryDomain));
+        }
+
+        [HttpGet]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> GetById([FromRoute] Guid id)
+        {
+            var countryDomain = await countryRepository.GetByIdAsync(id);
+            if(countryDomain == null)
+            {
+                return NotFound();
+            }
+            return Ok(mapper.Map<CountryDTO>(countryDomain));
         }
     }
 }
