@@ -5,7 +5,7 @@ namespace CastlesToWatch.API.Data
 {
     public class CastlesDbContext : DbContext
     {
-        public CastlesDbContext(DbContextOptions options) : base(options)
+        public CastlesDbContext(DbContextOptions<CastlesDbContext> options) : base(options)
         {
 
         }
