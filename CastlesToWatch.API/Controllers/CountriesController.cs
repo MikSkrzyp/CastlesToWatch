@@ -37,7 +37,7 @@ namespace CastlesToWatch.API.Controllers
         {
             var countryDomain = mapper.Map<Country>(createCountryDto);
              await countryRepository.CreateAsync(countryDomain);
-            return Ok(mapper.Map<CountryDTO>(countryDomain));
+            return Ok(countryDomain.Id);
         }
 
         [HttpGet]

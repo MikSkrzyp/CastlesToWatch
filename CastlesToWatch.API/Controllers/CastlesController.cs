@@ -42,7 +42,7 @@ namespace CastlesToWatch.API.Controllers
             var castleDomain = mapper.Map<Castle>(createCastleDto);
 
             await castleRepository.CreateAsync(castleDomain);
-            return Ok(mapper.Map<CastleDTO>(castleDomain));
+            return Ok(castleDomain.Id);
         }
 
         [HttpGet]
@@ -72,7 +72,7 @@ namespace CastlesToWatch.API.Controllers
             {
                 return NotFound();
             }
-            return Ok(mapper.Map<CastleDTO>(castleDomain));
+            return Ok("Updated");
         }
 
         [HttpDelete]
@@ -84,7 +84,7 @@ namespace CastlesToWatch.API.Controllers
             {
                 return NotFound();
             }
-            return Ok(mapper.Map<CastleDTO>(castleDomain));
+            return Ok("Deleted");
         }
 
     }
