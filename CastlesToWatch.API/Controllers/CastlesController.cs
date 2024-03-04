@@ -2,6 +2,7 @@
 using CastlesToWatch.API.Model.Domain;
 using CastlesToWatch.API.Model.DTO;
 using CastlesToWatch.API.Repositories;
+using CastlesToWatch.API.Validations;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -35,6 +36,7 @@ namespace CastlesToWatch.API.Controllers
 
         [HttpPost]
         [Authorize(Roles = "Admin")]
+        [ValidateModel]
         public async Task<IActionResult> Create([FromBody] CreateCastleDto createCastleDto)
         {
             var castleDomain = mapper.Map<Castle>(createCastleDto);
@@ -60,6 +62,7 @@ namespace CastlesToWatch.API.Controllers
         [HttpPut]
         [Route("{id:Guid}")]
         [Authorize(Roles = "Admin")]
+        [ValidateModel]
         public async Task<IActionResult> Update([FromRoute] Guid id, UpdateCastleDTO updateCastleDTO)
         {
             var castleDomain = mapper.Map<Castle>(updateCastleDTO);

@@ -3,6 +3,7 @@ using CastlesToWatch.API.Data;
 using CastlesToWatch.API.Model.Domain;
 using CastlesToWatch.API.Model.DTO;
 using CastlesToWatch.API.Repositories;
+using CastlesToWatch.API.Validations;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,6 +32,7 @@ namespace CastlesToWatch.API.Controllers
         }
 
         [HttpPost]
+        [ValidateModel]
         public async Task<IActionResult> Create([FromBody] CreateCountryDto createCountryDto)
         {
             var countryDomain = mapper.Map<Country>(createCountryDto);
