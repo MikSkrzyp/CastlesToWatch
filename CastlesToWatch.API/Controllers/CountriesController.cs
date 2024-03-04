@@ -28,6 +28,7 @@ namespace CastlesToWatch.API.Controllers
         public async Task<IActionResult> GetAll()
         {
             var countriesDomain = await countryRepository.GetAllAsync();
+            throw new Exception(); 
             return Ok(mapper.Map<List<Country>>(countriesDomain));
         }
 
