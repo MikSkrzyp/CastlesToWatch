@@ -10,7 +10,7 @@ It includes two entities:
 
 Database design:
 
-![App Screenshot](Screens\db_design.jpg)
+![App Screenshot](Screens/db_design.jpg)
 
 
 
@@ -37,11 +37,11 @@ URL
 
 Body:
 
-![App Screenshot](Screens\register_body.png)
+![App Screenshot](Screens/register_body.png)
 
 Response:
 
-![App Screenshot](Screens\register_response.png)
+![App Screenshot](Screens/register_response.png)
 
 ## POST: Login User
 
@@ -54,11 +54,11 @@ https://localhost:7172/api/Auth/Login
 
 Body:
 
-![App Screenshot](Screens\login_body.png)
+![App Screenshot](Screens/login_body.png)
 
 Response:
 
-![App Screenshot](Screens\login_response.png)
+![App Screenshot](Screens/login_response.png)
 
 ## GET: Castles
 Description : ***This get method returns list of castles with id, name address, rating and CountryId(which is foreign key to Country table). You can use filtering based on name and sorting based on rating (ascending or descending)***
@@ -73,11 +73,11 @@ URL
     
 Parameters:
 
-![App Screenshot](Screens\getcastles.png)
+![App Screenshot](Screens/getcastles.png)
 
 Response:
 
-![App Screenshot](Screens\getcastles_response.png)
+![App Screenshot](Screens/getcastles_response.png)
 
 ## GET: Castle by id
 
@@ -91,11 +91,11 @@ URL
     
 Parameters:
 
-![App Screenshot](Screens\get_castle_by_id_parameters.png)
+![App Screenshot](Screens/get_castle_by_id_parameters.png)
 
 Response:
 
-![App Screenshot](Screens\get_castle_by_id_response.png)
+![App Screenshot](Screens/get_castle_by_id_response.png)
 
 ## POST: Castle
 Description : ***This post method creates a new castle. You have to provide name, address, rating and CountryId from exisitng Countries table***
@@ -108,11 +108,11 @@ URL
     
 Body:
 
-![App Screenshot](Screens\postcastle_body.png)
+![App Screenshot](Screens/postcastle_body.png)
 
 Response:
 
-![App Screenshot](Screens\postcastle_response.png)
+![App Screenshot](Screens/postcastle_response.png)
 
 ## PUT: Castle
 
@@ -127,15 +127,15 @@ URL
     
 Parameters:
 
-![App Screenshot](Screens\putcastle_parameter.png)
+![App Screenshot](Screens/putcastle_parameter.png)
 
 Body:
 
-![App Screenshot](Screens\putcastle_body.png)
+![App Screenshot](Screens/putcastle_body.png)
 
 Response:
 
-![App Screenshot](Screens\putcastle_response.png)
+![App Screenshot](Screens/putcastle_response.png)
 
 
 ## DELETE: Castle
@@ -150,11 +150,11 @@ URL
     
 Parameters:
 
-![App Screenshot](Screens\deletecastle_parameters.png)
+![App Screenshot](Screens/deletecastle_parameters.png)
 
 Response:
 
-![App Screenshot](Screens\deletecastle_response.png)
+![App Screenshot](Screens/deletecastle_response.png)
 
 ## GET: Countries
 Description : ***This get method returns list of countries with id, name and shortname of each country***
@@ -167,7 +167,7 @@ URL
     
 Response:
 
-![App Screenshot](Screens\getcountries.png)
+![App Screenshot](Screens/getcountries.png)
 
 
 ## GET: Country by id
@@ -180,13 +180,13 @@ URL
     
 Parameters:
 
-![App Screenshot](Screens\gcbi_p.png)
+![App Screenshot](Screens/gcbi_p.png)
 
 
     
 Response:
 
-![App Screenshot](Screens\gcbi_r.png)
+![App Screenshot](Screens/gcbi_r.png)
 
 ## POST: Country
 Description : ***This post method creates a new country. You have to provide name and shortname of your country***
@@ -198,13 +198,13 @@ URL
     
 Parameters:
 
-![App Screenshot](Screens\pc_b.png)
+![App Screenshot](Screens/pc_b.png)
 
 
     
 Response:
 
-![App Screenshot](Screens\pc_r.png)
+![App Screenshot](Screens/pc_r.png)
 
 
 
