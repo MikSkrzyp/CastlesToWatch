@@ -4,6 +4,7 @@ using CastlesToWatch.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CastlesToWatch.API.Migrations.CastlesAuthDb
 {
     [DbContext(typeof(CastlesAuthDbContext))]
-    partial class CastlesAuthDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240305123942_changed auth")]
+    partial class changedauth
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

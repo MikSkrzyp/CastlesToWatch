@@ -24,7 +24,6 @@ namespace CastlesToWatch.API.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles ="Admin,User")]
         public async Task<IActionResult> GetAll([FromQuery] string? filterOn, [FromQuery] string? filterQuery,
             [FromQuery] string? sortBy, [FromQuery] bool? isAscending)
         { 
@@ -47,7 +46,6 @@ namespace CastlesToWatch.API.Controllers
 
         [HttpGet]
         [Route("{id:Guid}")]
-        [Authorize(Roles = "Admin,User")]
         public async Task<IActionResult> GetById([FromRoute] Guid id)
         {
             var castleDomain = await castleRepository.GetByIdAsync(id);

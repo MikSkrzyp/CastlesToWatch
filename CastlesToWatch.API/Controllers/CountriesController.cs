@@ -4,6 +4,7 @@ using CastlesToWatch.API.Model.Domain;
 using CastlesToWatch.API.Model.DTO;
 using CastlesToWatch.API.Repositories;
 using CastlesToWatch.API.Validations;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,6 +26,7 @@ namespace CastlesToWatch.API.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAll()
         {
             var countriesDomain = await countryRepository.GetAllAsync();
@@ -33,6 +35,7 @@ namespace CastlesToWatch.API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateModel]
         public async Task<IActionResult> Create([FromBody] CreateCountryDto createCountryDto)
         {
@@ -43,6 +46,7 @@ namespace CastlesToWatch.API.Controllers
 
         [HttpGet]
         [Route("{id:Guid}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetById([FromRoute] Guid id)
         {
             var countryDomain = await countryRepository.GetByIdAsync(id);
